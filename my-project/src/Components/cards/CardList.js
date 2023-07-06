@@ -20,8 +20,9 @@ let usedCards = []
 let activeCard = () => {
     const randomIndex = Math.floor(Math.random() * cards.length);
     const card = cards[randomIndex];
+    console.log(cards.length)
     cards.slice(randomIndex)
-    console.log(cards)
+    console.log(cards.length)
     usedCards.push(card)
     console.log(usedCards)
     return card;
