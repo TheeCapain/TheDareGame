@@ -1,5 +1,5 @@
 import './App.css';
-import Card from './Components/cards/Card';
+import CardList from './Components/cards/CardList';
 
 function App() {
   return (
@@ -9,8 +9,7 @@ function App() {
         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
           Play
         </button>
-
-        <Card/>
+        <CardList />
       </header>
     </div>
   );
