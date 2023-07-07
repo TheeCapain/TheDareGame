@@ -6,10 +6,11 @@ function menu() {
             <div className="border-solid border-2 border-indigo-600">
                 <ul >
                     <li><h1 className="font-sans">The Challenge Game</h1></li>
-                    <li>
+                    <li> <a href="/play">
                         <button className="bg-blue-500 hover:bg-blue-700 w-64 m-1 text-white font-bold py-2 px-4 rounded-full">
                             Quick Play
                         </button>
+                    </a>
                     </li>
                     <li>
                         <button className="bg-blue-500 hover:bg-blue-700 w-64 m-1 text-white font-bold py-2 px-4 rounded-full">
