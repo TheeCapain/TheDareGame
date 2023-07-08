@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom.min"
 function menu() {
     return (
-        <div className="grid h-screen place-items-center">
+        <div className="grid place-items-center">
 
-            <div className="border-solid border-2 border-indigo-600">
+            <div>
                 <ul >
                     <li><h1 className="font-sans">The Challenge Game</h1></li>
                     <li>

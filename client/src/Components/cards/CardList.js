@@ -2,9 +2,11 @@ import { useState } from "react";
 import React from "react";
 import Card from "./Card";
 
-
+let score = 0;
+let challengesCompleted = 0;
 
 function CardList() {
+
     let [cards, setCards] = useState([{
         id: 1,
         title: "Take a picture of an exotic house animal",
@@ -33,37 +35,39 @@ function CardList() {
     }])
 
     const cardCompleted = (card) => {
+        console.log(score)
+        score = card.points + parseInt(score)
+        challengesCompleted = challengesCompleted + 1;
         removeCard(card.id)
     }
 
     const removeCard = (id) => {
+        console.log(score)
         const usedCards = cards.filter(card => card.id !== id);
+
         setCards(usedCards)
     }
 
     let activeCard = () => {
         const randomIndex = Math.floor(Math.random() * cards.length);
         const card = cards[randomIndex];
-
-        if (card === undefined) {
-            return alert("No more cards")
-        }
         return card;
     };
     {
         if (cards.length !== 0) {
             return (
-                <div id='activeCard' className='grid h-screen place-items-center'>
-
-                    <Card activeCard={activeCard()} cardCompleted={cardCompleted} />
+                <div id='activeCard' className='grid  place-items-center'>
+                    <Card activeCard={activeCard()} cardCompleted={cardCompleted} removeCard={removeCard} />
+                    <p>Your score is: {score}</p>
                 </div>
             );
         } else {
             return (
 
-                <div id='activeCard' className='grid h-screen place-items-center'>
-
+                <div id='activeCard' className='grid place-items-center'>
                     <h1>No more cards</h1>
+                    <p>Challenges completed: {challengesCompleted}</p>
+                    <p>Your score is: {score}</p>
                 </div>
             );
         }

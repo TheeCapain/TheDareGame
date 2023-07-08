@@ -1,6 +1,6 @@
 import './App.css';
 import React from "react";
-import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Menu from './Components/GameSettings/Menu';
 import GameSetup from './Pages/GameSetup.js'
 import Play from './Pages/Play';

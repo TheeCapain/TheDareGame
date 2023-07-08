@@ -1,8 +1,10 @@
 import CardList from "../Components/Cards/CardList.js";
+let score = 0;
 const Play = () => {
+
     return (
         <div>
-            <CardList/>
+            <CardList score={score}/>
         </div>);
 }
 
