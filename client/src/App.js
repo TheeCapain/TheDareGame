@@ -1,5 +1,6 @@
 import './App.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import React from "react";
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import Menu from './Components/GameSettings/Menu';
 import GameSetup from './Pages/GameSetup.js'
 import Play from './Pages/Play';
@@ -10,23 +11,17 @@ function App() {
     <Router>
       <div className="App">
         <header className="App-header">
-          <Navbar/>
+          <Navbar />
           <div className='content'>
             <Switch>
-              <Route exact path="/">
-                <Menu />
-              </Route>
-              <Route exact path="/play">
-                <Play />
-              </Route>
-              <Route path="/setup">
-                <GameSetup />
-              </Route>
+              <Route exact path="/" component={Menu} />
+              <Route path="/play" component={Play} />
+              <Route path="/setup" component={GameSetup} />
             </Switch>
           </div>
         </header>
-      </div>
-    </Router>
+      </div >
+    </Router >
   );
 }
 
