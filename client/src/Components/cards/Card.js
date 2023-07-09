@@ -5,13 +5,13 @@ const Card = ({ cardCompleted, activeCard, removeCard }) => {
     <div id='card'>
       <div className="w-96 h-96  rounded overflow-hidden shadow-lg bg-slate-50">
         <div className="px-6 py-4">
-          <div className="h-24 font-bold text-xl mb-2 text-gray-700 ">{activeCard.title}</div>
+          <div className="flex h-24 font-bold text-xl mb-2 text-gray-700 ">{activeCard.title}</div>
 
-          <p className="h-24 text-gray-700 text-base">
+          <p className="flex h-24 text-gray-700 text-base">
             {activeCard.description}
           </p>
-          <p className="h-24 text-gray-700 text-base">
-            This card is worth: {activeCard.points}
+          <p className="flex h-24 text-gray-700 text-base">
+            This card is worth: {activeCard.points} points
           </p>
         </div>
         <div className=" relative">

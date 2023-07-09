@@ -17,18 +17,13 @@ function menu() {
                     <li>
                         <Link to="/setup">
                             <button className="bg-blue-500 hover:bg-blue-700 w-64 m-1 text-white font-bold py-2 px-4 rounded-full">
-                                Custom Game
+                                Create Game
                             </button>
                         </Link>
                     </li>
                     <li>
                         <button className="bg-blue-500 hover:bg-blue-700 w-64 m-1 text-white font-bold py-2 px-4 rounded-full">
                             Join Game
-                        </button>
-                    </li>
-                    <li>
-                        <button className="bg-blue-500 hover:bg-blue-700 w-64 m-1 text-white font-bold py-2 px-4 rounded-full">
-                            How to play
                         </button>
                     </li>
                 </ul>
