@@ -1,8 +1,3 @@
-import Team from '../Components/GameSettings/GameConfig/Team'
-import Player from '../Components/GameSettings/GameConfig/Player'
-
-let test = Team()
-
 const Setup = () => {
 
     return (

@@ -5,6 +5,8 @@ import Menu from './Components/GameSettings/Menu';
 import GameSetup from './Pages/GameSetup.js'
 import Play from './Pages/Play';
 import Navbar from './Components/Navbar';
+import Join from './Pages/Join'
+
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
               <Route exact path="/" component={Menu} />
               <Route path="/play" component={Play} />
               <Route path="/setup" component={GameSetup} />
+              <Route path="/join" component={Join} />
             </Switch>
           </div>
         </header>

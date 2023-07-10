@@ -8,7 +8,8 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #1f3db1;
+  background-image: linear-gradient(225deg, #1f3db1 0%, #6b60d2 33%, #2a86c8 66%, #3079c2 100%);
   min-height: 100vh;
 
 
