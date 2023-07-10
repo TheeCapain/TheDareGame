@@ -7,7 +7,6 @@ import Play from './Pages/Play';
 import Navbar from './Components/Navbar';
 import Join from './Pages/Join'
 
-
 function App() {
   return (
     <Router>

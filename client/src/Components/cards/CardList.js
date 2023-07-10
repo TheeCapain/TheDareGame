@@ -3,7 +3,6 @@ import React from "react";
 import Card from "./Card";
 import { createClient } from '@supabase/supabase-js';
 
-
 const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
 const supabaseKey = process.env.REACT_APP_SUPABASE_KEY;
 
@@ -28,11 +27,7 @@ let challenges = await getChallenges()
 let score = 0;
 let challengesCompleted = 0;
 
-
-
 function CardList() {
-
-
     let [cards, setCards] = useState(challenges)
 
     const cardCompleted = (card) => {
@@ -45,7 +40,6 @@ function CardList() {
         const usedCards = cards.filter(card => card.challenge_id !== id);
         console.log(cards.length)
         setCards(usedCards)
-
     }
 
     let activeCard = () => {
@@ -53,6 +47,7 @@ function CardList() {
         const card = cards[randomIndex];
         return card;
     };
+
     if (cards.length !== 0) {
         return (
             <div id='activeCard' className='grid  place-items-center'>
