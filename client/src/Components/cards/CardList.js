@@ -3,6 +3,7 @@ import React from "react";
 import Card from "./Card";
 import { createClient } from '@supabase/supabase-js';
 
+
 const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
 const supabaseKey = process.env.REACT_APP_SUPABASE_KEY;
 
@@ -24,22 +25,26 @@ async function getChallenges() {
 }
 
 let challenges = await getChallenges()
+
 let score = 0;
 let challengesCompleted = 0;
+let usedCards = []
+
 
 function CardList() {
     let [cards, setCards] = useState(challenges)
-
+   
     const cardCompleted = (card) => {
         score = card.challenge_points + parseInt(score)
         challengesCompleted = challengesCompleted + 1;
+        usedCards.push(card)
         removeCard(card.challenge_id)
     }
 
     const removeCard = (id) => {
-        const usedCards = cards.filter(card => card.challenge_id !== id);
-        console.log(cards.length)
-        setCards(usedCards)
+        cards = cards.filter(card => card.challenge_id !== id);
+        setCards(cards) 
+
     }
 
     let activeCard = () => {
@@ -47,13 +52,17 @@ function CardList() {
         const card = cards[randomIndex];
         return card;
     };
-
     if (cards.length !== 0) {
         return (
             <div id='activeCard' className='grid  place-items-center'>
 
                 <Card activeCard={activeCard()} cardCompleted={cardCompleted} removeCard={removeCard} />
                 <p>Your score is: {score}</p>
+                {usedCards.map(card => (
+                    <div className="blog-preview" >
+                        <h2>{card.challenge_title}</h2>
+                    </div>
+                ))}
             </div>
         );
     } else {

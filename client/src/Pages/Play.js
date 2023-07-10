@@ -22,7 +22,7 @@ const Play = () => {
 
 
         let fiveMinutes = 60 * 60,
-        display = document.querySelector('#time');
+            display = document.querySelector('#time');
         startTimer(fiveMinutes, display);
 
     });
