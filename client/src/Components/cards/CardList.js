@@ -3,9 +3,10 @@ import React from "react";
 import Card from "./Card";
 import { createClient } from '@supabase/supabase-js';
 
-
 const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
 const supabaseKey = process.env.REACT_APP_SUPABASE_KEY;
+
+
 
 const supabase = createClient(supabaseUrl, supabaseKey);
 
@@ -33,7 +34,7 @@ let usedCards = []
 
 function CardList() {
     let [cards, setCards] = useState(challenges)
-   
+
     const cardCompleted = (card) => {
         score = card.challenge_points + parseInt(score)
         challengesCompleted = challengesCompleted + 1;
@@ -43,7 +44,7 @@ function CardList() {
 
     const removeCard = (id) => {
         cards = cards.filter(card => card.challenge_id !== id);
-        setCards(cards) 
+        setCards(cards)
 
     }
 
