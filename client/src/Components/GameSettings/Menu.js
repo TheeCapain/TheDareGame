@@ -1,30 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom.min"
-function menu() {
+
+
+
+function Menu() {
+    const [playerName, setPlayerName] = useState('')
+
+    let playerId = 1;
+    const [players, setPlayers] = useState([
+    ])
+
     return (
         <div className="grid place-items-center">
-
             <div>
                 <ul >
                     <li><h1 className="font-sans">The Challenge Game</h1></li>
+                    <li><label className="left-0 ">Players</label></li>
+                    {players.map(player => (
+                        <input type="text" key={player.playerId} value={player.playerId} onChange={e => setPlayerName(e.target.value)} className="mb-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Player Name" />
+                    ))}
+                    <li>
+                        <button onClick={() => {
+                            setPlayers([
+                                ...players,
+                                { playerId: playerId++, playerName: playerName }
+                            ]);
+                        }} className="bg-green-500 hover:bg-green-700 w-64 m-1 text-white font-bold py-2 px-4 rounded-full">
+                            +
+                        </button>
+                    </li>
                     <li>
                         <Link to="/play">
                             <button className="bg-blue-500 hover:bg-blue-700 w-64 m-1 text-white font-bold py-2 px-4 rounded-full">
-                                Quick Play
-                            </button>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/setup">
-                            <button className="bg-blue-500 hover:bg-blue-700 w-64 m-1 text-white font-bold py-2 px-4 rounded-full">
-                                Create Game
-                            </button>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/join">
-                            <button className="bg-blue-500 hover:bg-blue-700 w-64 m-1 text-white font-bold py-2 px-4 rounded-full">
-                                Join Game
+                                Play
                             </button>
                         </Link>
                     </li>
@@ -36,4 +44,4 @@ function menu() {
 
 }
 
-export default menu
+export default Menu

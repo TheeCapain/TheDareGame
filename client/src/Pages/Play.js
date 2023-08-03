@@ -1,5 +1,5 @@
 import { React, useEffect } from "react";
-import CardList from "../Components/cards/CardList";
+import CardList from "../Components/Cards/CardList"
 
 const Play = () => {
     useEffect(() => {

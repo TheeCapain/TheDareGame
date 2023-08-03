@@ -1,9 +1,6 @@
 import React from 'react';
 const Card = ({ cardCompleted, activeCard, removeCard }) => {
   return (
-
-
-
     <div id='card'>
       <div
         className="w-96 h-96 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
@@ -19,7 +16,6 @@ const Card = ({ cardCompleted, activeCard, removeCard }) => {
             This card is worth: {activeCard.challenge_points}
           </p>
         </div>
-
         <button onClick={() => removeCard(activeCard.challenge_id)} className="inline-flex items-center mx-4 px-8 py-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
           Give up
         </button>
