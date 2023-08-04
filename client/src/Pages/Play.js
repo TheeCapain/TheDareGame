@@ -1,34 +1,15 @@
-import { React, useEffect } from "react";
+import { React } from "react";
 import CardList from "../Components/Cards/CardList.js"
+import Timer from "../Components/Timer.js"
+import { usePlayers } from "../Components/GameSettings/PlayerProvider.js";
+const Play = (props) => {
 
-const Play = () => {
-    useEffect(() => {
-        function startTimer(duration, display) {
-            let timer = duration, minutes, seconds;
-            setInterval(function () {
-                minutes = parseInt(timer / 60, 10)
-                seconds = parseInt(timer % 60, 10);
-
-                minutes = minutes < 10 ? "0" + minutes : minutes;
-                seconds = seconds < 10 ? "0" + seconds : seconds;
-
-                display.textContent = minutes + ":" + seconds;
-
-                if (--timer < 0) {
-                    timer = duration;
-                }
-            }, 1000);
-        }
-        let fiveMinutes = 60 * 60,
-            display = document.querySelector('#time');
-        startTimer(fiveMinutes, display);
-
-    });
-
+    const { players } = usePlayers();
+    console.log(players)
 
     return (
         <div>
-            <div>Time Left: <span id="time"></span> minutes!</div>
+            <Timer />
             <CardList />
         </div>);
 }

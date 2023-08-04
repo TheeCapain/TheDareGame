@@ -60,7 +60,7 @@ function CardList() {
                 <Card activeCard={activeCard()} cardCompleted={cardCompleted} removeCard={removeCard} />
                 <p>Your score is: {score}</p>
                 {usedCards.map(card => (
-                    <div className="blog-preview" >
+                    <div key={card.challenge_id} className="blog-preview" >
                         <h2>{card.challenge_title}</h2>
                     </div>
                 ))}
