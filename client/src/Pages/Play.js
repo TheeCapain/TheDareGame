@@ -1,16 +1,14 @@
 import { React } from "react";
 import CardList from "../Components/Cards/CardList.js"
 import Timer from "../Components/Timer.js"
-import { usePlayers } from "../Components/GameSettings/PlayerProvider.js";
 const Play = (props) => {
 
-    const { players } = usePlayers();
-    console.log(players)
+    const { players } = props.location.state;
 
     return (
         <div>
             <Timer />
-            <CardList />
+            <CardList players={players} />
         </div>);
 }
 

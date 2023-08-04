@@ -26,13 +26,14 @@ async function getChallenges() {
 }
 
 let challenges = await getChallenges()
-
 let score = 0;
 let challengesCompleted = 0;
 let usedCards = []
 
 
-function CardList() {
+function CardList(props) {
+
+    let players = props.players
     let [cards, setCards] = useState(challenges)
 
     const cardCompleted = (card) => {
@@ -56,9 +57,11 @@ function CardList() {
     if (cards.length !== 0) {
         return (
             <div id='activeCard' className='grid  place-items-center'>
-
+                <p>{players.length}'s turns</p>
                 <Card activeCard={activeCard()} cardCompleted={cardCompleted} removeCard={removeCard} />
+
                 <p>Your score is: {score}</p>
+
                 {usedCards.map(card => (
                     <div key={card.challenge_id} className="blog-preview" >
                         <h2>{card.challenge_title}</h2>
