@@ -5,7 +5,6 @@ import Menu from './Components/GameSettings/Menu';
 import Play from './Pages/Play';
 import Navbar from './Components/Navbar';
 
-
 function App() {
   return (
     <Router>

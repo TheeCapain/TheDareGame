@@ -1,5 +1,5 @@
 import { React, useEffect } from "react";
-import CardList from "../Components/Cards/CardList"
+import CardList from "../Components/Cards/CardList.js"
 
 const Play = () => {
     useEffect(() => {
@@ -19,16 +19,11 @@ const Play = () => {
                 }
             }, 1000);
         }
-
-
         let fiveMinutes = 60 * 60,
             display = document.querySelector('#time');
         startTimer(fiveMinutes, display);
 
     });
-
-
-
 
 
     return (
