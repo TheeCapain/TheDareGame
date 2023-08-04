@@ -12,7 +12,7 @@ function Menu() {
             <div>
                 <ul >
                     <li><h1 className="font-sans">The Challenge Game</h1></li>
-                    <li><label className="left-0 ">Players</label></li>
+                    <li><label className="relative h-32 w-32">Players</label></li>
                     <input onChange={e => setPlayerName(e.target.value)} className="flex flex-row mb-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                     {players.map(player => (
                         <li type="text" key={player.playerId} className="flex flex-row w-full">
