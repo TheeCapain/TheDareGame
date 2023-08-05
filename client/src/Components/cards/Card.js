@@ -3,7 +3,7 @@ const Card = ({ cardCompleted, activeCard, removeCard }) => {
   return (
     <div id='card'>
       <div
-        className="w-96 h-96 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        className="w-80 h-96 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <div className='relative h-80'>
           <h5
             className="text-left mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">

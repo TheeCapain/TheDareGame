@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 
 function Settings() {
     const [playerName, setPlayerName] = useState('')
-    const [players, setPlayers] = useState([{ playerId: 0, playerName: "Player 1", playerTeam: 0 }])
+    const [players, setPlayers] = useState([{ playerId: 0, playerName: "Player 1", playerTeam: 0, playerPoints:0 }])
     const history = useHistory();
 
     const startGame = () => {
