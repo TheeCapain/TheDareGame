@@ -29,8 +29,8 @@ let challenges = await getChallenges()
 let score = 0;
 let challengesCompleted = 0;
 let usedCards = []
-
-
+let turn = 1;
+let playersTurn = 0;
 function CardList(props) {
 
     let players = props.players
@@ -41,6 +41,7 @@ function CardList(props) {
         challengesCompleted = challengesCompleted + 1;
         usedCards.push(card)
         removeCard(card.challenge_id)
+        playerTurn(turn)
     }
 
     const removeCard = (id) => {
@@ -54,10 +55,22 @@ function CardList(props) {
         const card = cards[randomIndex];
         return card;
     };
+
+    const playerTurn = () => {
+        if (turn === players.length) {
+            turn = 0
+            playersTurn = turn
+            turn++
+        } else {
+            playersTurn = turn++
+        }
+
+    }
+
     if (cards.length !== 0) {
         return (
             <div id='activeCard' className='grid  place-items-center'>
-                <p>{players.length}'s turns</p>
+                <p>{players[playersTurn].playerName}'s turn</p>
                 <Card activeCard={activeCard()} cardCompleted={cardCompleted} removeCard={removeCard} />
 
                 <p>Your score is: {score}</p>
