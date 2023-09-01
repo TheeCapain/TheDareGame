@@ -26,7 +26,6 @@ async function getChallenges() {
 }
 
 let challenges = await getChallenges()
-let score = 0;
 let challengesCompleted = 0;
 let usedCards = []
 let turn = 1;
@@ -37,7 +36,9 @@ function CardList(props) {
     let [cards, setCards] = useState(challenges)
 
     const cardCompleted = (card) => {
-        score = card.challenge_points + parseInt(score)
+        console.log("in cards completed")
+        console.log(players[playersTurn])
+        players[playersTurn].playerPoints = card.challenge_points + players[playersTurn].playerPoints
         challengesCompleted = challengesCompleted + 1;
         usedCards.push(card)
         removeCard(card.challenge_id)
@@ -72,8 +73,9 @@ function CardList(props) {
             <div id='activeCard' className='grid  place-items-center'>
                 <p>{players[playersTurn].playerName}'s turn</p>
                 <Card activeCard={activeCard()} cardCompleted={cardCompleted} removeCard={removeCard} />
-
-                <p>Your score is: {score}</p>
+                {players.map((player) => (
+                    <ul key={player.playerId}><p>{player.playerName}: {player.playerPoints}</p></ul>
+                ))}
             </div>
         );
     } else {
@@ -82,7 +84,9 @@ function CardList(props) {
             <div id='activeCard' className='grid place-items-center'>
                 <h1>No more cards</h1>
                 <p>Challenges completed: {challengesCompleted}</p>
-                <p>Your score is: {score}</p>
+                {players.map((player) => (
+                    <ul key={player.playerId}><p>{player.playerName}: {player.playerPoints}</p></ul>
+                ))}
             </div>
         );
     }

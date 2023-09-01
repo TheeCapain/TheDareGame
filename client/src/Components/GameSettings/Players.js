@@ -7,8 +7,6 @@ function Players(props) {
     const players = props.players;
     const setPlayers = props.setPlayers;
 
-    console.log(players)
-
     return (
         <div className="grid place-items-center">
             <div>
@@ -32,7 +30,7 @@ function Players(props) {
                     <button className="bg-green-500 hover:bg-green-700 w-64 m-1 text-white font-bold py-2 px-4 rounded-full" onClick={() => {
                         setPlayers([
                             ...players,
-                            { playerId: playerId++, playerName: playerName, playerTeam: teamId++ }
+                            { playerId: playerId++, playerName: playerName, playerTeam: teamId++, playerPoints: 0 }
                         ]);
                     }} >
                         +
